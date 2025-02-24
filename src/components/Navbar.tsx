@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 
@@ -17,6 +17,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
     { path: '/projects', label: 'Projects' },
     { path: '/experience', label: 'Experience' },
     { path: '/contact', label: 'Contact' },
+    { path: '/interview', label: 'interview' },
   ];
 
   return (
