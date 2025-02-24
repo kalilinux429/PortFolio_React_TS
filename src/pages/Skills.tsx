@@ -1,4 +1,3 @@
-import React from 'react';
 
 const skills = {
   frontend: [
@@ -10,11 +9,10 @@ const skills = {
   backend: [
     { name: 'Node.js', level: 85 },
     { name: 'Express', level: 80 },
-    { name: 'PostgreSQL', level: 75 },
     { name: 'MongoDB', level: 80 },
   ],
   tools: [
-    { name: 'Git', level: 90 },
+    { name: 'Git_Lab', level: 90 },
     { name: 'Docker', level: 75 },
     { name: 'AWS', level: 70 },
     { name: 'CI/CD', level: 80 },

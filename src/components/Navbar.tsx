@@ -22,7 +22,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
   return (
     <nav className="fixed w-full bg-white dark:bg-gray-900 shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-14">
           <div className="flex items-center">
             <NavLink to="/" className="text-2xl font-bold text-gray-900 dark:text-white">
               Portfolio

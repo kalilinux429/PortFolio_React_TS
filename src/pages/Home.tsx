@@ -1,18 +1,24 @@
 
 import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import TypingEffect from './TypeEffect';
 export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-          Hi, I'm <span className="text-blue-600 dark:text-blue-400">Suchit Kapale</span>
+          Hi, I'm <span className="text-blue-600 dark:text-green-700">Suchit Kapale</span>
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-          Mern Stack Developer
+        <div className='flex justify-center items-center h-100'><img 
+      src='/Profile.jpeg'
+      alt='profile_img'
+      className="w-[150px] h-[150px] rounded-[50%] border-2 border-white object-cover"
+    />
+    </div>
+        <p className="text-xl sm:text-2xl text-green-600 dark:text-green-300 mb-8">
+         <TypingEffect />
         </p>
-        <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 dark:text-gray-100 mb-12 max-w-2xl mx-auto">
           I build exceptional digital experiences that combine clean code with 
           beautiful designs. Let's work together to bring your ideas to life.
         </p>
