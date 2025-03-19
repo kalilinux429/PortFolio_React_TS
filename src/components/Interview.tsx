@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { ChevronDown, ChevronUp, PlusCircle } from 'lucide-react';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { ChevronDown, ChevronUp, PlusCircle } from "lucide-react";
 
 // Define types for questions
 type Question = {
@@ -11,42 +11,43 @@ type Question = {
   category: string;
 };
 
-const tabs: string[] = ['JavaScript', 'React', 'Coding', 'Other'];
+const tabs: string[] = ["JavaScript", "React", "Coding", "Other"];
 
 export default function Interview() {
   const [questions, setQuestions] = useState<Record<string, Question[]>>({
     JavaScript: [],
     React: [],
     Coding: [],
-    Other: []
+    Other: [],
   });
-  const [activeTab, setActiveTab] = useState<string>('JavaScript');
+  const [activeTab, setActiveTab] = useState<string>("JavaScript");
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [showAddQuestion, setShowAddQuestion] = useState<boolean>(false);
-  const [newQuestion, setNewQuestion] = useState<Omit<Question, 'id'>>({
-    title: '',
-    codeSnippet: '',
-    answer: '',
-    category: 'JavaScript'
+  const [newQuestion, setNewQuestion] = useState<Omit<Question, "id">>({
+    title: "",
+    codeSnippet: "",
+    answer: "",
+    category: "JavaScript",
   });
 
   // Set the new API base URL
-
-axios.defaults.baseURL = 'https://qustionapiporfolio.onrender.com';
-
+  axios.defaults.baseURL = "https://qustionapiporfolio.onrender.com";
 
   // Fetch questions on component mount
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('/api/questions');
-        const categorizedQuestions = tabs.reduce<Record<string, Question[]>>((acc, tab) => {
-          acc[tab] = response.data.filter((q: Question) => q.category === tab);
-          return acc;
-        }, {});
+        const response = await axios.get("/api/questions");
+        const categorizedQuestions = tabs.reduce<Record<string, Question[]>>(
+          (acc, tab) => {
+            acc[tab] = response.data.filter((q: Question) => q.category === tab);
+            return acc;
+          },
+          {}
+        );
         setQuestions(categorizedQuestions);
       } catch (error) {
-        console.error('Error fetching questions:', error);
+        console.error("Error fetching questions:", error);
       }
     };
     fetchQuestions();
@@ -58,20 +59,20 @@ axios.defaults.baseURL = 'https://qustionapiporfolio.onrender.com';
     if (!newQuestion.title || !newQuestion.answer) return;
 
     try {
-      const response = await axios.post('/api/questions', {
+      const response = await axios.post("/api/questions", {
         ...newQuestion,
-        category: activeTab
+        category: activeTab,
       });
 
       setQuestions((prev) => ({
         ...prev,
-        [activeTab]: [...prev[activeTab], response.data]
+        [activeTab]: [...prev[activeTab], response.data],
       }));
 
-      setNewQuestion({ title: '', codeSnippet: '', answer: '', category: activeTab });
+      setNewQuestion({ title: "", codeSnippet: "", answer: "", category: activeTab });
       setShowAddQuestion(false);
     } catch (error) {
-      console.error('Error adding question:', error);
+      console.error("Error adding question:", error);
     }
   };
 
@@ -87,7 +88,7 @@ axios.defaults.baseURL = 'https://qustionapiporfolio.onrender.com';
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-2 rounded-md text-sm font-medium ${
-                activeTab === tab ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800'
+                activeTab === tab ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-800"
               }`}
             >
               {tab}
@@ -152,8 +153,11 @@ axios.defaults.baseURL = 'https://qustionapiporfolio.onrender.com';
         <div className="space-y-4">
           {questions[activeTab]?.map((question) => (
             <div key={question.id} className="bg-white shadow-sm rounded-lg overflow-hidden">
+              {/* ✅ Fixed: Now only one question expands at a time */}
               <button
-                onClick={() => setExpandedId(expandedId === question.id ? null : question.id)}
+                onClick={() =>
+                  setExpandedId((prevId) => (prevId === question.id ? null : question.id))
+                }
                 className="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50"
               >
                 <span className="text-lg font-medium text-gray-900">{question.title}</span>
@@ -166,7 +170,7 @@ axios.defaults.baseURL = 'https://qustionapiporfolio.onrender.com';
               {expandedId === question.id && (
                 <div className="px-6 pb-4">
                   {question.codeSnippet && (
-                    <pre className="bg-gray-50 rounded-md p-4 overflow-x-auto text-sm font-mono text-gray-800">
+                    <pre className="bg-gray-900 text-white rounded-md p-4 overflow-x-auto text-sm font-mono">
                       {question.codeSnippet}
                     </pre>
                   )}
