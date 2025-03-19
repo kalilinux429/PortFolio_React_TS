@@ -107,7 +107,7 @@ export default function Interview() {
         {/* Add Question Form */}
         {showAddQuestion && (
           <form onSubmit={handleSubmit} className="bg-white shadow-sm rounded-lg p-6 mb-8">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Add New Question</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">New Question</h2>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700">Question Title</label>
