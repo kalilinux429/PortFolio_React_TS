@@ -28,6 +28,7 @@ export const projects = [
     liveUrl: "https://map-lines-assessment.vercel.app/"
   },
 
+  
 
    {
     id: 1,
@@ -38,4 +39,15 @@ export const projects = [
     githubUrl: "",
     liveUrl: "https://code-snippet-saver-six.vercel.app"
   },
+
+   {
+    id: 3,
+    title: "Ms-word To Pdf Converter",
+    description: "Convert to pef, image compression,editor",
+    technologies: ["React", "OpenWeather API", "Mapbox"],
+    imageUrl: "https://private-user-images.githubusercontent.com/77877663/475451166-b928e8cb-b6f7-4c60-babe-4e001cc54127.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTQ1NTM0NDUsIm5iZiI6MTc1NDU1MzE0NSwicGF0aCI6Ii83Nzg3NzY2My80NzU0NTExNjYtYjkyOGU4Y2ItYjZmNy00YzYwLWJhYmUtNGUwMDFjYzU0MTI3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA4MDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwODA3VDA3NTIyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTlhNzAxNjgxYzk4MDU4Mzc0M2IxZDdlYTNlNWRhOTQ2MmRlMDgxNjJiYWE1YTU1ZjUzYjU2MmI1NTgyZjZkMjcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.nWkSppocqBfvlsNr2Q_WJfc2lsc03ZOzlaL8HOjHZE8",
+    githubUrl: "#",
+    liveUrl: "https://msword-pdf-fileforge.vercel.app/"
+  },
+
 ];
