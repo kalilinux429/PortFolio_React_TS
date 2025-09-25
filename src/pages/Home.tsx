@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-          Hi, I'm <span className="text-blue-600 dark:text-green-700">Suchit Kapale</span>
+          Hi, I'm <span className="text-blue-600 dark:text-green-700">Suchit Developer</span>
         </h1>
         <div className='flex justify-center items-center h-100'><img 
       src='/Profile.jpeg'
